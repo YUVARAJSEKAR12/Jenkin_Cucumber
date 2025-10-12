@@ -8,14 +8,12 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                echo '📥 Pulling code from Git...'
                 git branch: 'main', url: 'https://github.com/YUVARAJSEKAR12/Jenkin_Cucumber.git'
             }
         }
 
         stage('Build & Install Dependencies') {
             steps {
-                echo '⚙️ Building project and downloading dependencies...'
                 sh 'mvn clean install -DskipTests'
             }
         }
