@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+    git 'Default'
+}
     environment {
         TEST_TAGS = "@tag1"
     }
@@ -20,8 +23,8 @@ pipeline {
 
         stage('Run Cucumber Tests') {
             steps {
-                echo '🧪 Running Cucumber tests...'
-                sh 'mvn test'
+                echo '⚙️ Building project and downloading dependencies...'
+                bat 'mvn clean install'
             }
         }
 
