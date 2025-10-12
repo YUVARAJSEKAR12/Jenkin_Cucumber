@@ -1,9 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven 3.9.6'
-    }
+   
 
     parameters {
         string(name: 'CUCUMBER_TAGS', defaultValue: '@tag1', description: 'Tags to run')
