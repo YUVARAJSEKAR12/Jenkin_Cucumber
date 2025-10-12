@@ -1,27 +1,31 @@
 pipeline {
     agent any
+
     tools {
-    git 'Default'
-}
-   
+        maven 'Maven 3.9.6'
+    }
+
+    parameters {
+        string(name: 'CUCUMBER_TAGS', defaultValue: '@tag1', description: 'Tags to run')
+    }
 
     stages {
-
-        stage('Clone') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/YUVARAJSEKAR12/Jenkin_Cucumber.git'
             }
         }
 
-       
-
-        stage('Functional Test') {
+        stage('Run Cucumber Tests') {
             steps {
-               mvn(goal: "clean test -Dtest-TestRunnerTemplate -Dcucumber.options=\"--tags @tag1\"-")
+                bat "mvn clean test -Dcucumber.filter.tags=${params.CUCUMBER_TAGS}"
             }
         }
+    }
 
-       
-
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+        }
     }
 }
