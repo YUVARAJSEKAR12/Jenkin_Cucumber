@@ -9,6 +9,7 @@ pipeline {
 
     environment {
         PATH = "$PATH:${tool('Maven_3.9')}/bin"
+        TEST_TAGS = "@tag1"
     }
 
     stages {
@@ -16,7 +17,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo '📥 Pulling code from Git...'
-                git branch: 'main', url: 'https://github.com/your-org/your-cucumber-project.git'
+                git branch: 'main', url: 'https://github.com/YUVARAJSEKAR12/Jenkin_Cucumber.git'
             }
         }
 
