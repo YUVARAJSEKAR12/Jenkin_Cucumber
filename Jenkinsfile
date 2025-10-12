@@ -1,14 +1,6 @@
 pipeline {
     agent any
-
-    tools {
-        // Must match names configured in Jenkins Global Tool Configuration
-        maven 'Maven_3.9'  
-        jdk 'Java_11'
-    }
-
     environment {
-        PATH = "$PATH:${tool('Maven_3.9')}/bin"
         TEST_TAGS = "@tag1"
     }
 
