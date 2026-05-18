@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Base {
 	
-	//git changes
-	//Git COnflict
 
 		public static WebDriver driver = null;
 		public static Properties prop = new Properties();
@@ -108,7 +106,12 @@ public class Base {
 				e.printStackTrace();
 			}
 		}
-		
+		public static void test3() {
+			
+		}
+		public static void test4() {
+			
+		}
 		public static void test2() {
 			
 		}
