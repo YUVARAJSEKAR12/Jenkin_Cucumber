@@ -115,7 +115,12 @@ public class Base {
 		public static void test2() {
 			
 		}
+<<<<<<< HEAD
 		public static void test7() {
+=======
+
+		public static void test5() {
+>>>>>>> e7fee9b3eb42d09506ffad16a611af01664c1183
 			
 		}
 }
